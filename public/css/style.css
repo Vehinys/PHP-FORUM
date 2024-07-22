@@ -2,8 +2,36 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+}
+
+#mainpage, footer, a{
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+nav {
+    display: flex;
+    place-content: center;
+    margin-top: 1rem;
+    background: linear-gradient(to left,rgba(54,194,182,0.96) 0,rgba(62,188,207,0.96) 100%);
+    padding : 2rem 0;
+    font-size: 3rem;
+    justify-content: space-evenly;
+}
+
+#forum {
+    height: 55rem;
 }
 
 h1 {
-    color: rgb(0, 122, 156);
+    margin: 2rem 0 1rem 0;
+}
+
+.home_text{
+    margin-bottom: 1rem  ;
+}
+
+p.home_text{
+    width: 40rem;
 }
