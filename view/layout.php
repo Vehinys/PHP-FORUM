@@ -39,8 +39,8 @@
                                 ?>
                                 <a href="index.php?ctrl=security&action=login"       > Connexion   </a>
                                 <a href="index.php?ctrl=security&action=register"    > Inscription </a>
-                                <a href="index.php?ctrl=forum&action=listTopics&id=" > Topic       </a>
-                                <a href="index.php?ctrl=forum&action=listPosts&id="  > Post        </a>
+                                <a href="index.php?ctrl=forum&action=listTopics" > Topic       </a>
+                                <a href="index.php?ctrl=forum&action=listPosts"  > Post        </a>
                             <?php
                             }
                         ?>

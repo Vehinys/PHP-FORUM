@@ -42,4 +42,38 @@ class ForumController extends AbstractController implements ControllerInterface{
             ]
         ];
     }
+
+    public function listTopics($id) {
+
+        $topicManager    = new TopicManager();
+        $categoryManager = new CategoryManager();
+        $category        = $categoryManager->findOneById($id);
+        $topics          = $topicManager->findTopicsByCategory($id);
+
+        return [
+            "view"             => VIEW_DIR."forum/listTopics.php",
+            "meta_description" => "Liste des topics par catégorie : ".$category,
+            "data"             => [
+                "category"     => $category,
+                "topics"       => $topics
+            ]
+        ];
+    }
+
+    public function listPosts($id) {
+
+        $topicManager    = new TopicManager();
+        $categoryManager = new CategoryManager();
+        $category        = $categoryManager->findOneById($id);
+        $topics          = $topicManager->findTopicsByCategory($id);
+
+        return [
+            "view"             => VIEW_DIR."forum/listTopics.php",
+            "meta_description" => "Liste des topics par catégorie : ".$category,
+            "data"             => [
+                "category"     => $category,
+                "topics"       => $topics
+            ]
+        ];
+    }
 }
