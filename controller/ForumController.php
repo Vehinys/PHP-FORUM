@@ -14,31 +14,31 @@ class ForumController extends AbstractController implements ControllerInterface{
         // créer une nouvelle instance de CategoryManager
         $categoryManager = new CategoryManager();
         // récupérer la liste de toutes les catégories grâce à la méthode findAll de Manager.php (triés par nom)
-        $categories = $categoryManager->findAll(["name", "DESC"]);
+        $categories      = $categoryManager->findAll(["name", "DESC"]);
 
         // le controller communique avec la vue "listCategories" (view) pour lui envoyer la liste des catégories (data)
         return [
-            "view" => VIEW_DIR."forum/listCategories.php",
+            "view"             => VIEW_DIR."forum/listCategories.php",
             "meta_description" => "Liste des catégories du forum",
-            "data" => [
-                "categories" => $categories
+            "data"             => [
+                "categories"   => $categories
             ]
         ];
     }
 
     public function listTopicsByCategory($id) {
 
-        $topicManager = new TopicManager();
+        $topicManager    = new TopicManager();
         $categoryManager = new CategoryManager();
-        $category = $categoryManager->findOneById($id);
-        $topics = $topicManager->findTopicsByCategory($id);
+        $category        = $categoryManager->findOneById($id);
+        $topics          = $topicManager->findTopicsByCategory($id);
 
         return [
-            "view" => VIEW_DIR."forum/listTopics.php",
+            "view"             => VIEW_DIR."forum/listTopics.php",
             "meta_description" => "Liste des topics par catégorie : ".$category,
-            "data" => [
-                "category" => $category,
-                "topics" => $topics
+            "data"             => [
+                "category"     => $category,
+                "topics"       => $topics
             ]
         ];
     }
