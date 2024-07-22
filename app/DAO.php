@@ -2,7 +2,6 @@
 namespace App;
 
 /**
- * 
  * Classe d'accès aux données de la BDD, abstraite
  * 
  * @property static $bdd l'instance de PDO que la classe stockera lorsque connect() sera appelé
@@ -10,7 +9,6 @@ namespace App;
  * @method static connect() connexion à la BDD
  * @method static insert()  requètes d'insertion dans la BDD
  * @method static select()  requètes de sélection
- * 
  */
 abstract class DAO{
 
