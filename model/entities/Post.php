@@ -16,6 +16,8 @@ final class Post extends Entity{
     private $id;
     private $text;
     private $creationDate;
+    Private $topic_id;
+    private $user_id;
 
     public function __construct($data){         
         $this->hydrate($data);        
@@ -72,8 +74,48 @@ final class Post extends Entity{
         return $this;
     }
 
+    /**
+     * Get the value of topic_id
+     */ 
+    public function getTopic_id()
+    {
+        return $this->topic_id;
+    }
+
+    /**
+     * Set the value of topic_id
+     *
+     * @return  self
+     */ 
+    public function setTopic_id($topic_id)
+    {
+        $this->topic_id = $topic_id;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of user_id
+     */ 
+    public function getUser_id()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * Set the value of user_id
+     *
+     * @return  self
+     */ 
+    public function setUser_id($user_id)
+    {
+        $this->user_id = $user_id;
+
+        return $this;
+    }
+
     public function __toString(){
         return $this->text;
     }
-
+    
 }
