@@ -15,10 +15,12 @@ final class Topic extends Entity{
 
     private $id;
     private $title;
-    private $user;
     private $creationDate;
     private $closed;
-    private $user_id;
+    private $user;
+    private $category;
+
+  
 
     public function __construct($data){         
         $this->hydrate($data);        
@@ -114,21 +116,21 @@ final class Topic extends Entity{
     }
 
     /**
-     * Get the value of user_id
+     * Get the value of category
      */ 
-    public function getUser_id()
+    public function getCategory()
     {
-        return $this->user_id;
+        return $this->category;
     }
 
     /**
-     * Set the value of user_id
+     * Set the value of category
      *
      * @return  self
      */ 
-    public function setUser_id($user_id)
+    public function setCategroy($category)
     {
-        $this->user_id = $user_id;
+        $this->category = $category;
 
         return $this;
     }

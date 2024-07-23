@@ -7,5 +7,22 @@
 
 <?php
 foreach($topics as $topic){ 
-    ?> <p> <a href="index.php?ctrl=forum&action=listTopics&id=<?= $category->getId()?> " </a><?= $topic ?> par <?= $topic->getUser() ?> </p> <?php 
+
+    ?> 
+    
+    <p>
+        
+        <a class="contenu_topic" href="index.php?ctrl=forum&action=listTopics&id=<?= $topic->getId() ?>">
+            
+        <?= $topic ?> 
+        
+        par 
+        
+        <?= $topic->getUser() ?> 
+
+    </a>
+    
+    </p>
+    
+    <?php 
 }
