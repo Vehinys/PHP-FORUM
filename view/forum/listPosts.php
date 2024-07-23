@@ -1,11 +1,14 @@
 <?php
-    $category = $result["data"]['category']; 
-    $posts    = $result["data"]['posts']   ; 
+// listPosts.php
+$posts = $data['posts'];
 ?>
 
-<h1>Liste des Posts</h1>
+<h1>Liste des posts</h1>
 
-<?php
-foreach($posts as $post ){ 
-    ?> <p><a href="index.php?ctrl=forum&action=listPosts&id="> <?= $post ?> </a> par <?= $post->getUser() ?> </p> <?php 
-}
+    <?php foreach ($posts as $post): ?>
+
+            <h2><?php $post->getTitle(); ?></h2>
+            <p><?php  $post->getText(); ?></p>
+            <p><small> Posté par <?= $post->getUser() ?>  le <?= $post->creationDate()->format('d/m/Y H:i'); ?> </small></p>
+            
+    <?php endforeach; ?>

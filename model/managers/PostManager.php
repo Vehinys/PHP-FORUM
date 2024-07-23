@@ -15,11 +15,11 @@ class PostManager extends Manager{
     }
 
     // récupérer tous les post d'une catégorie spécifique (par son id)
-    public function findPostsByCategory($id) {
+    public function findPosts($id) {
 
         $sql = "SELECT * 
-                FROM ".$this->tableName." t
-                WHERE t.category_id = :id";
+                FROM ".$this->tableName." p
+                WHERE p.post_id = :id";
     
         // la requête renvoie plusieurs enregistrements --> getMultipleResults
         return  $this->getMultipleResults(
