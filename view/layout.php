@@ -41,7 +41,7 @@
                                 <a href="index.php?ctrl=security&action=register"    > Inscription </a>
                                 <a href="index.php?ctrl=forum&action=listTopics"     > Topics      </a>
                                 <a href="index.php?ctrl=forum&action=listPosts"      > Posts       </a>
-                                <a href="index.php?ctrl=forum&action=listTopics"     > Catégorie   </a>
+                                <a href="index.php?ctrl=forum&action=index"          > Catégorie   </a>
                             <?php
                             }
                         ?>
