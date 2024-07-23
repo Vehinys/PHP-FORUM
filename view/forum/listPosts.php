@@ -9,6 +9,6 @@ $posts = $data['posts'];
 
             <h2><?php $post->getTitle(); ?></h2>
             <p><?php  $post->getText(); ?></p>
-            <p><small> Posté par <?= $post->getUser() ?>  le <?= $post->creationDate()->format('d/m/Y H:i'); ?> </small></p>
+            <p><small> Posté par <?= $post->getUser() ?>  le <?= $post->creationDate() ?> </small></p>
             
     <?php endforeach; ?>

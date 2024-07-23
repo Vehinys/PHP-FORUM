@@ -1,28 +1,20 @@
 <?php
-    $category = $result["data"]['category']; 
     $topics   = $result["data"]['topics']  ; 
 ?>
 
 <h1> Liste des topics </h1>
 
-<?php
-foreach($topics as $topic){ 
+<div class="container_topics" > 
 
-    ?> 
-    
-    <p>
-        
-        <a class="contenu_topic" href="index.php?ctrl=forum&action=listTopics&id=<?= $topic->getId() ?>">
-            
-        <?= $topic ?> 
-        
-        par 
-        
-        <?= $topic->getUser() ?> 
+    <?php foreach($topics as $topic){  ?> 
 
-    </a>
-    
-    </p>
-    
-    <?php 
-}
+        <a class="contenu_topics" href="index.php?ctrl=forum&action=listTopics&id=<?= $topic->getId() ?>">
+
+            <h2 class="title_topic"><?= $topic ?></h2> 
+            <div class="p_topic"> Par <b class="user_topic"><?= $topic->getUser() ?></b> Le <?= $topic->getCreationDate();?> </div>
+
+        </a>
+
+    <?php }
+
+?> </div> <?php

@@ -39,7 +39,7 @@ nav {
 }
 
 #forum {
-    height: 45.5rem;
+    height: 50rem;
     color: rgb(0, 0, 0);
 }
 
@@ -84,6 +84,38 @@ p.home_text{
     -moz-box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
     padding: 1rem;
     background: linear-gradient(to left,rgba(3, 127, 176, 1) 0,rgba(32, 76, 98, 1) 100%);
+}
+
+
+.container_topics a {
+    display: grid;
+    justify-items: start;
+    width: 440px;
+    margin: 20px;
+    padding: 20px;
+    color: white;
+    border: 1px solid rgba(54,194,182,0.96);
+    border-radius: 10px;
+    box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
+    -webkit-box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
+    -moz-box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
+    padding: 1rem;
+    background: linear-gradient(to left,rgba(3, 127, 176, 1) 0,rgba(32, 76, 98, 1) 100%);
+}
+
+.title_topic {
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.p_topic {
+    font-size: 13px;
+}
+
+.user_topic {
+    font-size:larger;
 }
 
 /* -------------------------------- FOOTER -------------------------------- */
