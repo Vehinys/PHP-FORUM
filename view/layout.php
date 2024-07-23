@@ -39,9 +39,8 @@
                                 ?>
                                 <a href="index.php?ctrl=security&action=login"       > Connexion   </a>
                                 <a href="index.php?ctrl=security&action=register"    > Inscription </a>
-                                <a href="index.php?ctrl=forum&action=listTopics"     > Topics      </a>
-                                <a href="index.php?ctrl=forum&action=listPosts"      > Posts       </a>
-                                <a href="index.php?ctrl=forum&action=index"          > Catégorie   </a>
+                                <a href="index.php?ctrl=forum&action=index"          > Forum  </a>
+                                <a href="index.php?ctrl=forum&action=users"          > Membres  </a>
                             <?php
                             }
                         ?>

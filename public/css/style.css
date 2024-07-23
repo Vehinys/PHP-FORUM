@@ -24,14 +24,14 @@ nav {
     place-content: center;
     background: linear-gradient(to left,rgba(54,194,182,0.96) 0,rgba(62,188,207,0.96) 100%);
     padding : 1.25rem 0;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     justify-content: space-evenly;
     border-bottom: 1px solid rgba(0,0,0,.1);
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
 }
 
 #forum {
-    height: 50.15rem;
+    height: 49rem;
     color: black;
 }
 
@@ -48,6 +48,24 @@ p.home_text{
 font-size: 18px;
 } 
 
+.contenu_category {
+    letter-spacing : 2px ;
+    color:black;
+    font-size: 3rem;
+}
+
+.contenu_category:hover {
+    font-size: 3.25rem;
+    font-weight: bold;
+}
+
+.container_category {
+    gap: 3em;
+    display: flex;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
 
 /* -------------------------------- FOOTER -------------------------------- */
 
@@ -56,5 +74,5 @@ footer {
     border-top: 1px solid rgba(0,0,0,.1);
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
     padding : 1.25rem 0;
-    font-size: 1.25rem;;
+    font-size: 1.5rem;
 }
