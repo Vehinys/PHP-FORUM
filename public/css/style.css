@@ -19,19 +19,27 @@
     color: white;
 }
 
+#nav-right a:hover, #nav-left a:hover, footer a:hover {
+    color: rgb(157, 251, 225);
+}
+
 nav {
     display: flex;
     place-content: center;
-    background: linear-gradient(to left,rgba(54,194,182,0.96) 0,rgba(62,188,207,0.96) 100%);
-    padding : 1.25rem 0;
+    background: linear-gradient(to left,rgba(3, 127, 176, 1) 0,rgba(32, 76, 98, 1) 100%);
+    padding : 1.5rem 0;
     font-size: 2.5rem;
     justify-content: space-evenly;
     border-bottom: 1px solid rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+    box-shadow: 0px 7px 7px -3px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0px 7px 7px -3px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 7px 7px -3px rgba(0,0,0,0.3);
+    text-shadow: 0px 5px 6px rgba(0,0,0,0.6);
+
 }
 
 #forum {
-    height: 49rem;
+    height: 45.5rem;
     color: black;
 }
 
@@ -45,34 +53,46 @@ h1 {
 }
 
 p.home_text{
-font-size: 18px;
+    font-size: 18px;
 } 
 
 .contenu_category {
     letter-spacing : 2px ;
-    color:black;
-    font-size: 3rem;
+    color: white;
+    font-size: 1.7rem;
+    text-shadow: 0px 5px 6px rgba(0,0,0,0.6);
 }
 
 .contenu_category:hover {
-    font-size: 3.25rem;
-    font-weight: bold;
+    color: rgb(157, 251, 225);
 }
 
 .container_category {
     gap: 3em;
     display: flex;
-    margin-top: 2rem;
+    margin-top: 3.5rem;
     justify-content: center;
 }
 
+.container_category p {
+    width: 250px;
+    border: 1px solid rgba(54,194,182,0.96);
+    border-radius: 10px;
+    box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
+    -webkit-box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
+    -moz-box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
+    padding: 1rem;
+    background: linear-gradient(to left,rgba(3, 127, 176, 1) 0,rgba(32, 76, 98, 1) 100%);
+}
 
 /* -------------------------------- FOOTER -------------------------------- */
 
 footer {
-    background: linear-gradient(to left,rgba(54,194,182,0.96) 0,rgba(62,188,207,0.96) 100%);
+    background: linear-gradient(to left,rgba(3, 127, 176, 1) 0,rgba(32, 76, 98, 1) 100%);
     border-top: 1px solid rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    padding : 1.25rem 0;
+    box-shadow: 0px -7px 7px -3px rgba(0,0,0,0.7);
+    -webkit-box-shadow: 0px -7px 7px -3px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px -7px 7px -3px rgba(0,0,0,0.3);
+    padding : 1.5rem 0;
     font-size: 1.5rem;
 }
