@@ -6,7 +6,6 @@ use App\DAO;
 
 class PostManager extends Manager{
 
-    // on indique la classe POO et la table correspondante en BDD pour le manager concerné
     protected $className = "Model\Entities\Post";
     protected $tableName = "post";
 
@@ -14,17 +13,17 @@ class PostManager extends Manager{
         parent::connect();
     }
 
-    // récupérer tous les post d'une catégorie spécifique (par son id)
-    public function findPosts($id) {
+    public function findPostsByTopic($id) {
 
         $sql = "SELECT * 
-                FROM ".$this->tableName." p
-                WHERE p.post_id = :id";
-    
+                FROM ".$this->tableName." t 
+                WHERE t.topic_id = :id
+                ORDER BY creationDate";
+       
         // la requête renvoie plusieurs enregistrements --> getMultipleResults
         return  $this->getMultipleResults(
             DAO::select($sql, ['id' => $id]), 
             $this->className
         );
     }
-}    
+}

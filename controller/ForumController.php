@@ -44,17 +44,19 @@ class ForumController extends AbstractController implements ControllerInterface{
         ];
     }
 
-    public function listPosts($id) {
-
-        // Utilisation de PostManager pour récupérer les posts par catégorie
+    public function listPostsByTopic($id) {
+        $topicManager = new TopicManager();
         $postManager = new PostManager();
-        $posts       = $postManager->findPosts($id);
+
+        $topic = $topicManager->findOneById($id);
+        $posts = $postManager->findPostsByTopic($id);
 
         return [
-            "view"             => VIEW_DIR."forum/listPosts.php",
-            "meta_description" => "Liste des posts pour la catégorie : ".$id,
-            "data"             => [
-                "posts"        => $posts
+            "view" => VIEW_DIR."forum/listPostsByTopic.php",
+            "meta_description" => "Messages postés sur le topic : ".$topic,
+            "data" => [
+                "topic" => $topic,
+                "posts" => $posts
             ]
         ];
     }

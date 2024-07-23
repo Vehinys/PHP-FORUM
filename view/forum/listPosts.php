@@ -1,6 +1,7 @@
 <?php
 // listPosts.php
-$posts = $data['posts'];
+$posts  = $data['posts'];
+$topics = $data['topics'];
 ?>
 
 <h1>Liste des posts</h1>
@@ -9,6 +10,6 @@ $posts = $data['posts'];
 
             <h2><?php $post->getTitle(); ?></h2>
             <p><?php  $post->getText(); ?></p>
-            <p><small> Posté par <?= $post->getUser() ?>  le <?= $post->creationDate() ?> </small></p>
+            <p> Posté par <?= $post->getUser() ?>  le <?= $post->creationDate() ?></p>
             
     <?php endforeach; ?>
