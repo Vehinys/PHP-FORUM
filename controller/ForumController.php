@@ -52,7 +52,7 @@ class ForumController extends AbstractController implements ControllerInterface{
         $posts = $postManager->findPostsByTopic($id);
 
         return [
-            "view" => VIEW_DIR."forum/listPostsByTopic.php",
+            "view" => VIEW_DIR."forum/listPosts.php",
             "meta_description" => "Messages postés sur le topic : ".$topic,
             "data" => [
                 "topic" => $topic,

@@ -128,6 +128,34 @@ p.home_text{
 .user_topic:hover {
     color: rgb(157, 251, 225);
 }
+/* -------------------------------- POSTS -------------------------------- */
+
+.container_posts_title {
+    justify-items: start;
+    width: 300px;
+    margin: 15px 0 0 30px;
+    color: white;
+    border: 1px solid rgba(54,194,182,0.96);
+    border-radius: 10px;
+    box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
+    -webkit-box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
+    -moz-box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
+    padding: 1rem;
+    background: linear-gradient(to left,rgba(3, 127, 176, 1) 0,rgba(32, 76, 98, 1) 100%);
+}
+
+.contenu_posts{
+    text-align: start;
+    margin: 15px 0 0 30px;
+    color: white;
+    border: 1px solid rgba(54,194,182,0.96);
+    border-radius: 10px;
+    box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
+    -webkit-box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
+    -moz-box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
+    padding: 1rem;
+    background: linear-gradient(to left,rgba(3, 127, 176, 1) 0,rgba(32, 76, 98, 1) 100%);
+}
 
 /* -------------------------------- FOOTER -------------------------------- */
 
