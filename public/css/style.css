@@ -103,6 +103,11 @@ p.home_text{
     background: linear-gradient(to left,rgba(3, 127, 176, 1) 0,rgba(32, 76, 98, 1) 100%);
 }
 
+.title_topic:hover{
+    color: rgb(157, 251, 225);
+}
+
+
 .title_topic {
     font-weight: bold;
     font-size: 25px;
@@ -116,6 +121,10 @@ p.home_text{
 
 .user_topic {
     font-size:larger;
+}
+
+.user_topic:hover {
+    color: rgb(157, 251, 225);
 }
 
 /* -------------------------------- FOOTER -------------------------------- */
