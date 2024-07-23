@@ -19,7 +19,7 @@
                 <header>
                     <nav>
                         <div id="nav-left">
-                            <a href="/">Accueil</a>
+                            <a href="index.php">Accueil</a>
                             <?php
                             if(App\Session::isAdmin()){
                                 ?>
@@ -30,6 +30,7 @@
                         <?php
                             // si l'utilisateur est connecté 
                             if(App\Session::getUser()){
+
                                 ?>
                                 <a href="index.php?ctrl=security&action=profile"> <span class="fas fa-user"> </span>&nbsp;<?= App\Session::getUser()?> </a>
                                 <a href="index.php?ctrl=security&action=logout"> Déconnexion </a>
@@ -45,7 +46,6 @@
                         </div>
                     </nav>
                 </header>
-
                 <main id="forum">
                     <?= $page ?>
                 </main>
@@ -88,5 +88,8 @@
             })
         </script>
         <script src="<?= PUBLIC_DIR ?>/js/script.js"></script>
+
+        
     </body>
+    
 </html>
