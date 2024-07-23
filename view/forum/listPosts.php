@@ -11,16 +11,16 @@ $posts   = $result["data"]['posts'];
 
         </div> 
 
-        <div class="contenu_posts">
-
             <?php foreach ($posts as $post): ?>
 
-            <p><?= $post->getText(); ?></p>
+                <div class="contenu_posts">
 
-            <p> Posté par <?= $post->getUser() ?>  le <?= $post->getCreationDate() ?></p>
+                        <p><?= $post->getText(); ?></p>
 
-            <?php endforeach; ?>
+                        <p class="container_contenu_posts"> Posté par <b class="user_posts"><?= $post->getUser() ?></b>  le <?= $post->getCreationDate() ?></p>
+                        
+                </div>
 
-        </div> 
-        
-</div>    
+                <?php endforeach; ?>
+                
+        </div>    
