@@ -22,10 +22,8 @@
 
         <form action="index.php?ctrl=admin&action=addCategory" method="post">
 
-            <label for="name"> Ajoute une catégorie : </label><br><br>
-
-            <input type="text" id="name" name="name" /> <br><br>
-
+            <label for="name"> Ajoute une catégorie : </label>
+            <input type="text" id="name" name="name" /> 
             <input type='submit' name='submit'> 
             
         </form>

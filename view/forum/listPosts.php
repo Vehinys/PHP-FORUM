@@ -1,27 +1,26 @@
 <?php
 // listPosts.php
 $topic   = $result["data"]['topic'];
-
 $posts   = $result["data"]['posts'];
 ?>
 <div class="container_posts"> 
 
-        <div class="container_posts_title">
+    <div class="container_posts_title">
 
-            <p><?= $topic->getTitle(); ?></p>
+        <p><?= $topic->getTitle(); ?></p>
 
-        </div> 
+    </div>
 
-            <?php foreach ($posts as $post): ?>
+    <?php foreach ($posts as $post): ?>
 
-                <div class="contenu_posts">
+        <div class="contenu_posts">
 
-                        <p><?= $post->getText(); ?></p>
+            <p><?= $post->getText(); ?></p>
+            
+            <p class="container_contenu_posts"> Posté par <b class="user_posts"><?= $post->getUser() ?></b>  le <?= $post->getCreationDate() ?></p>   
 
-                        <p class="container_contenu_posts"> Posté par <b class="user_posts"><?= $post->getUser() ?></b>  le <?= $post->getCreationDate() ?></p>
-                        
-                </div>
+        </div>
 
-                <?php endforeach; ?>
-                
-        </div>    
+    <?php endforeach; ?>  
+
+</div>    
