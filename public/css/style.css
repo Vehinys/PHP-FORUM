@@ -26,11 +26,13 @@
 nav {
     display: flex;
     place-content: center;
-    background: linear-gradient(to left,rgba(3, 127, 176, 1) 0,rgba(32, 76, 98, 1) 100%);
+
     padding : 1rem 0;
     font-size: 1.5rem;
     justify-content: space-evenly;
     border-bottom: 1px solid rgba(0,0,0,.1);
+
+    background: linear-gradient(to left,rgba(3, 127, 176, 1) 0,rgba(32, 76, 98, 1) 100%);
     box-shadow: 0px 7px 7px -3px rgba(0,0,0,0.3);
     -webkit-box-shadow: 0px 7px 7px -3px rgba(0,0,0,0.3);
     -moz-box-shadow: 0px 7px 7px -3px rgba(0,0,0,0.3);
@@ -131,6 +133,7 @@ p.home_text {
 /* -------------------------------- POSTS -------------------------------- */
 
 .container_posts_title {
+    background: linear-gradient(to left,rgba(3, 127, 176, 1) 0,rgba(32, 76, 98, 1) 100%);
     justify-items: start;
     width: 450px;
     margin: 15px 0 15px 50px;
@@ -141,11 +144,11 @@ p.home_text {
     -webkit-box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
     -moz-box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
     padding: 1rem;
-    background: linear-gradient(to left,rgba(3, 127, 176, 1) 0,rgba(32, 76, 98, 1) 100%);
     font-size: 25px;
 }
 
 .contenu_posts {
+    background: linear-gradient(to left,rgba(3, 127, 176, 1) 0,rgba(32, 76, 98, 1) 100%);
     font-size: 1.45rem;
     text-align: start;
     margin: 5px 50px 5px 50px;
@@ -156,7 +159,6 @@ p.home_text {
     -webkit-box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
     -moz-box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
     padding: 1rem;
-    background: linear-gradient(to left,rgba(3, 127, 176, 1) 0,rgba(32, 76, 98, 1) 100%);
     text-align: justify;
 }
 
@@ -174,9 +176,10 @@ p.home_text {
 
 
 .contenu_home {
-
+    background: linear-gradient(to left,rgba(3, 127, 176, 1) 0,rgba(32, 76, 98, 1) 100%);
     display: flex;
     color:white;
+    padding: 1rem;
     margin-top: 1rem;
     justify-content: center;
     width: 430px;
@@ -185,8 +188,6 @@ p.home_text {
     box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
     -webkit-box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
     -moz-box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
-    padding: 1rem;
-    background: linear-gradient(to left,rgba(3, 127, 176, 1) 0,rgba(32, 76, 98, 1) 100%);
 }
 
 .container_home {
@@ -197,19 +198,21 @@ p.home_text {
 /* -------------------------------- AJOUT TOPIC -------------------------------- */
 
 .container_topics_form{
+    background: linear-gradient(to left,rgba(3, 127, 176, 1) 0,rgba(32, 76, 98, 1) 100%);
     display: flex;
     color:white;
     margin-top: 5rem;
     justify-content: center;
     margin-left: 35rem;
     width: 800px;
-    border: 1px solid rgba(54,194,182,0.96);
+    padding: 1rem;
     border-radius: 10px;
+    border: 1px solid rgba(54,194,182,0.96);
     box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
     -webkit-box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
     -moz-box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
-    padding: 1rem;
-    background: linear-gradient(to left,rgba(3, 127, 176, 1) 0,rgba(32, 76, 98, 1) 100%);
+
+
 }
 
 textarea {
@@ -222,11 +225,12 @@ textarea {
 
 footer {
     background: linear-gradient(to left,rgba(3, 127, 176, 1) 0,rgba(32, 76, 98, 1) 100%);
+    padding : 1rem 0;
+    margin-top : 3rem;
+    font-size : 1.50rem;
     border-top: 1px solid rgba(0,0,0,.1);
     box-shadow: 0px -7px 7px -3px rgba(0,0,0,0.7);
     -webkit-box-shadow: 0px -7px 7px -3px rgba(0,0,0,0.3);
     -moz-box-shadow: 0px -7px 7px -3px rgba(0,0,0,0.3);
-    padding : 1rem 0;
-    margin-top : 3rem;
-    font-size : 0.75rem;
+    text-shadow: 0px 5px 6px rgba(0,0,0,0.6);
 }
