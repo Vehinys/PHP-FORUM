@@ -16,6 +16,7 @@ $topics = $result["data"]['topics'];
 
         foreach($topics as $topic ){ ?>
             <a href="index.php?ctrl=forum&action=listPostsByTopic&id=<?= $topic->getId() ?>">
+                
                 <div>
                     <h4><?=$topic->getTitle()?></h4>
                     <p>créé par <b><?= $topic->getUser() ?></b>, le <?= $topic->getCreationDate();?></p>

@@ -27,4 +27,11 @@ class TopicManager extends Manager{
             $this->className
         );
     }
+
+    public function lastFiveTopics() {
+        $sql = " SELECT *
+        FROM ".$this->tableName." t
+        ORDER BY creationDate DESC
+        LIMIT 5";
+    }
 }
