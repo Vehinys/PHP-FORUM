@@ -18,15 +18,17 @@
 </div>
 
 <div><br>
-    <form action="index.php?ctrl=admin&action=addCategory" method="post">
+        <!-- Formulaire pour ajouter un nouveau genre -->
 
-        <label for="addCategory">Ajoute une catégorie : </label>
+        <form action="index.php?ctrl=admin&action=addCategory" method="post">
 
-        <input required type="text" name="categoryName">
+            <label for="name"> Ajoute une catégorie : </label><br><br>
 
-        <input type='submit' value ='Ajouter'>
+            <input type="text" id="name" name="name" /> <br><br>
 
-    </form>
+            <input type='submit' name='submit'> 
+            
+        </form>
     
 </div>
 

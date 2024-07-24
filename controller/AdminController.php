@@ -13,9 +13,17 @@ public function addCategory() {
        
        $categoryManager = new CategoryManager();
 
-       $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_FULL_SPECIAL_CHARS); // récupère et sanitise les valeurs de champs entrées par l'utilisateur
-           $category = [ 'name' => $name];
-           $categoryManager->add($category);  
-           $this->redirectTo("forum", "index");
-       }
-   }
+    //    var_dump($_POST);
+    //    die();
+
+       $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        
+    //    var_dump($name);
+
+       $categoryManager->add(['name' => $name]);  
+           
+    $this->redirectTo("forum", "index");
+
+    }
+
+}
