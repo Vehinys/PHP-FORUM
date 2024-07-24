@@ -1,3 +1,7 @@
+<?php
+$topics = $result["data"]['topics'];
+?>
+
 <h1 >BIENVENUE SUR LE FORUM</h1>
 
 <p class="home_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ut nemo quia voluptas numquam, itaque ipsa soluta ratione eum temporibus aliquid, facere rerum in laborum debitis labore aliquam ullam cumque.</p>
@@ -7,3 +11,15 @@
     <span>&nbsp;-&nbsp;</span>
     <a href="index.php?ctrl=security&action=register">S'inscrire</a>
 </p>
+
+<?php  // Affichage des 5 derniers topics enregistrés sur le forum 
+
+        foreach($topics as $topic ){ ?>
+            <a href="index.php?ctrl=forum&action=listPostsByTopic&id=<?= $topic->getId() ?>">
+                <div>
+                    <h4><?=$topic->getTitle()?></h4>
+                    <p>créé par <b><?= $topic->getUser() ?></b>, le <?= $topic->getCreationDate();?></p>
+                </div>
+            </a>
+
+        <?php } ?>
