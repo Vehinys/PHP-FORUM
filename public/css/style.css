@@ -45,8 +45,8 @@ nav {
 }
 
 h1 {
-    margin: 1.5rem 0 0.5rem 0;
-    font-size: 3rem;
+    margin: 4rem;
+    font-size: 4rem;
 }
 
 .home_text {
@@ -54,7 +54,8 @@ h1 {
 }
 
 p.home_text {
-    font-size: 18px;
+    font-size: 25px;
+    margin: 2rem 5rem;
 } 
 
 /* -------------------------------- CATEGORY -------------------------------- */
@@ -192,6 +193,30 @@ p.home_text {
     text-align: -webkit-center;
     display: ruby-text;
 }
+
+/* -------------------------------- AJOUT TOPIC -------------------------------- */
+
+.container_topics_form{
+    display: flex;
+    color:white;
+    margin-top: 5rem;
+    justify-content: center;
+    margin-left: 35rem;
+    width: 800px;
+    border: 1px solid rgba(54,194,182,0.96);
+    border-radius: 10px;
+    box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
+    -webkit-box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
+    -moz-box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
+    padding: 1rem;
+    background: linear-gradient(to left,rgba(3, 127, 176, 1) 0,rgba(32, 76, 98, 1) 100%);
+}
+
+textarea {
+    resize: none;
+    border:1px solid black;
+    box-shadow: 0 0 10px #719ECE;
+  }
 
 /* -------------------------------- FOOTER -------------------------------- */
 

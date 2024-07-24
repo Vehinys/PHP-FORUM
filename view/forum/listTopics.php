@@ -20,17 +20,24 @@
 
 </div> 
 
-<div><br>
+<div class="container_topics_form"><br>
+
         <!-- Formulaire pour ajouter un posts -->
-         <form action="index.php?ctrl=admin&action=addTopics">
+
+         <form class="contenu_topics_form" action="index.php?ctrl=admin&action=addTopics">
+
             <label for="title"> Titre du topic : </label><br>
-            <input type="text" id="title" name="title" /> <br><br>
+
+            <input type="text" id="title" name="title"/> <br><br>
 
             <label for="name"> Ajoute ton texte : </label><br>
+
             <textarea id="text" name="text" rows="8" cols="100"> </textarea><br><br>
 
             <input type='submit' name='submit'> 
+
         </form>
+
 </div>
 
 
