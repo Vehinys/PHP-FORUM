@@ -19,7 +19,6 @@ class HomeController extends AbstractController implements ControllerInterface {
             "data" => [
                 "topics" => $topics,
             ]
-
         ];
     }
         

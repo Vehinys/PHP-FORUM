@@ -29,9 +29,16 @@ class TopicManager extends Manager{
     }
 
     public function lastFiveTopics() {
+
         $sql = " SELECT *
         FROM ".$this->tableName." t
         ORDER BY creationDate DESC
         LIMIT 5";
+        
+            // la requête renvoie plusieurs enregistrements --> getMultipleResults
+        return  $this->getMultipleResults(
+            DAO::select($sql), 
+            $this->className
+        );
     }
 }
