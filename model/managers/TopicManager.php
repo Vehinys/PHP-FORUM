@@ -33,7 +33,7 @@ class TopicManager extends Manager{
         $sql = " SELECT *
         FROM ".$this->tableName." t
         ORDER BY creationDate DESC
-        LIMIT 5";
+        LIMIT 8";
         
             // la requête renvoie plusieurs enregistrements --> getMultipleResults
         return  $this->getMultipleResults(

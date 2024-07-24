@@ -1,5 +1,6 @@
 <?php
     $categories = $result["data"]['categories']; 
+
 ?>
 
 <div class="container_category">
@@ -23,14 +24,10 @@
         <form action="index.php?ctrl=admin&action=addCategory" method="post">
 
             <label for="name"> Ajoute une catégorie : </label>
-            <input type="text" id="name" name="name" /> 
+            <input type="aria" id="name" name="name" /> 
+
             <input type='submit' name='submit'> 
             
         </form>
     
 </div>
-
-
-
-
-  

@@ -22,14 +22,12 @@ $topics = $result["data"]['topics'];
 <?php  // Affichage des 5 derniers topics enregistrés sur le forum 
 
         foreach($topics as $topic) { ?>
-
             <a class="contenu_home" href="index.php?ctrl=forum&action=listPostsByTopic&id=<?=$topic->getId()?>">
 
                 <div>
 
                     <h2 class="title_home"><?=$topic->getTitle()?></h2>
-
-                    <div class="p_topic" ><p>créé par <b><?= $topic->getUser() ?></b>, le <?= $topic->getCreationDate();?></p></div>
+                    <div class="p_topic" ><p>Crée par <b><?= $topic->getUser() ?></b>, le <?= $topic->getCreationDate();?></p></div>
 
                 </div>
 
