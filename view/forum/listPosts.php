@@ -1,6 +1,7 @@
 <?php
 // listPosts.php
 $topic   = $result["data"]['topic'];
+
 $posts   = $result["data"]['posts'];
 ?>
 <div class="container_posts"> 

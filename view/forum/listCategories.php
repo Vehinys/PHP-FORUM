@@ -19,10 +19,15 @@
 
 <div><br>
     <form action="index.php?ctrl=admin&action=addCategory" method="post">
+
         <label for="addCategory">Ajoute une catégorie : </label>
+
         <input required type="text" name="categoryName">
+
         <input type='submit' value ='Ajouter'>
+
     </form>
+    
 </div>
 
 

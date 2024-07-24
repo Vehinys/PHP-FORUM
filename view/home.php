@@ -8,9 +8,13 @@ $topics = $result["data"]['topics'];
                     itaque ipsa soluta ratione eum temporibus aliquid, facere rerum in laborum debitis labore aliquam ullam cumque.</p>
 
 <p class="home_text" >
+
     <a href="index.php?ctrl=security&action=login">Se connecter</a>
+
     <span>&nbsp;-&nbsp;</span>
+
     <a href="index.php?ctrl=security&action=register">S'inscrire</a>
+    
 </p>
 
 <div class="container_home" >
@@ -24,6 +28,7 @@ $topics = $result["data"]['topics'];
                 <div>
 
                     <h2 class="title_home"><?=$topic->getTitle()?></h2>
+
                     <div class="p_topic" ><p>créé par <b><?= $topic->getUser() ?></b>, le <?= $topic->getCreationDate();?></p></div>
 
                 </div>
