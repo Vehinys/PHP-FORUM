@@ -24,7 +24,6 @@ $topics = $result["data"]['topics'];
                 <div>
 
                     <h2 class="title_home"><?=$topic->getTitle()?></h2>
-                
                     <div class="p_topic" ><p>créé par <b><?= $topic->getUser() ?></b>, le <?= $topic->getCreationDate();?></p></div>
 
                 </div>
