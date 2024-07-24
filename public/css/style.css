@@ -5,7 +5,7 @@
     text-decoration: none;
 }
 
- #mainpage, footer{
+ #mainpage, footer {
     text-align: center;
     color: rgb(255, 255, 255);
 }
@@ -44,17 +44,16 @@ nav {
     color: rgb(0, 0, 0);
 }
 
-
 h1 {
     margin: 1.5rem 0 0.5rem 0;
     font-size: 3rem;
 }
 
-.home_text{
+.home_text {
     margin-bottom: 1rem  ;
 }
 
-p.home_text{
+p.home_text {
     font-size: 18px;
 } 
 
@@ -106,10 +105,9 @@ p.home_text{
     background: linear-gradient(to left,rgba(3, 127, 176, 1) 0,rgba(32, 76, 98, 1) 100%);
 }
 
-.title_topic:hover{
+.title_topic:hover {
     color: rgb(157, 251, 225);
 }
-
 
 .title_topic {
     font-weight: 1000px;
@@ -146,7 +144,7 @@ p.home_text{
     font-size: 25px;
 }
 
-.contenu_posts{
+.contenu_posts {
     font-size: 1.45rem;
     text-align: start;
     margin: 5px 50px 5px 50px;
@@ -166,7 +164,7 @@ p.home_text{
     font-size: 1.15rem;
 }
 
-.container_contenu_posts{
+.container_contenu_posts {
     font-size: 0.75rem;
     padding-top: 10px;
 }
