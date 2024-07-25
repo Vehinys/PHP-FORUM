@@ -23,16 +23,10 @@ $topics = $result["data"]['topics'];
 
         foreach($topics as $topic) { ?>
             <a class="contenu_home" href="index.php?ctrl=forum&action=listPostsByTopic&id=<?=$topic->getId()?>">
-
-                <div>
-
+                <div class="contenu_home_information">
                     <h2 class="title_home"><?=$topic->getTitle()?></h2>
                     <div class="p_topic" ><p>Crée par <b><?= $topic->getUser() ?></b>, le <?= $topic->getCreationDate();?></p></div>
-
                 </div>
-
             </a>
-
         <?php } ?>
-
 </div>
