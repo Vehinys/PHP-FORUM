@@ -37,7 +37,7 @@
                             }
                             else{
                                 ?>
-                                <a href="index.php?ctrl=forum&action=index"> Forum </a>
+                                <a href="index.php?ctrl=forum&action=index"> Catégories</a>
                                 <a href="index.php?ctrl=forum&action=users"> Membres </a>
                                 <a href="index.php?ctrl=security&action=logout"> Déconnexion </a>
                             <?php
