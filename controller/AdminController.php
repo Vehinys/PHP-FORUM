@@ -33,14 +33,13 @@ public function addTopic($id) {
 
     $title        = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $text         = filter_input(INPUT_POST, 'text', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $topic_id     = $_GET['id'];
     $category_id  = $_GET['id'];
 
     var_dump($text);
 
     $topicManager->add(['title' => $title, 'category_id' => $category_id]); 
-    $postManager-> add(['text' => $text]);
-
-    $last_id = $topicManager->add($postManager);
+    $postManager->add(['text' => $text, 'topic_id' => $topic_id]);
 
     // $this->redirectTo("forum", "index");
 
