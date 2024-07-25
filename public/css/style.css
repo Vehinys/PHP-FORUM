@@ -38,7 +38,6 @@ nav {
     -moz-box-shadow: 0px 7px 7px -3px rgba(0,0,0,0.3);
     text-shadow: 0px 5px 6px rgba(0,0,0,0.6);
     margin-bottom: 3rem;
-
 }
 
 #forum {
@@ -130,6 +129,7 @@ p.home_text {
 .user_topic:hover {
     color: rgb(157, 251, 225);
 }
+
 /* -------------------------------- POSTS -------------------------------- */
 
 .container_posts_title {
@@ -174,7 +174,6 @@ p.home_text {
 
 /* -------------------------------- HOME -------------------------------- */
 
-
 .contenu_home {
     background: linear-gradient(to left,rgba(3, 127, 176, 1) 0,rgba(32, 76, 98, 1) 100%);
     display: flex;
@@ -197,7 +196,7 @@ p.home_text {
 
 /* -------------------------------- AJOUT TOPIC -------------------------------- */
 
-.container_topics_form{
+.container_topics_form {
     background: linear-gradient(to left,rgba(3, 127, 176, 1) 0,rgba(32, 76, 98, 1) 100%);
     display: flex;
     color:white;
@@ -211,8 +210,6 @@ p.home_text {
     box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
     -webkit-box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
     -moz-box-shadow: 6px 6px 19px -3px rgba(0,0,0,0.59);
-
-
 }
 
 textarea {
