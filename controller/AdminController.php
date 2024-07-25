@@ -6,6 +6,7 @@ use App\ControllerInterface;
 use Model\Managers\CategoryManager;
 use Model\Managers\TopicManager;
 use Model\Managers\PostManager;
+use Model\Managers\UserManager;
 
 
 class AdminController extends AbstractController implements ControllerInterface{
@@ -24,7 +25,6 @@ public function addCategory() {
    $this->redirectTo("forum", "index");
 
    }
-
 }
   
 

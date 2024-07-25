@@ -7,7 +7,7 @@ use App\ControllerInterface;
 use Model\Managers\CategoryManager;
 use Model\Managers\TopicManager;
 use Model\Managers\PostManager;
-use Model\Managers\MembreManager;
+use Model\Managers\UserManager;
 
 class ForumController extends AbstractController implements ControllerInterface{
 
@@ -28,19 +28,17 @@ class ForumController extends AbstractController implements ControllerInterface{
         ];
     }
 
-    public function user() {
+    public function users() {
         
-        // Créer une nouvelle instance de CategoryManager
-        $membreManager = new MembreManager();
-        // Récupérer la liste de toutes les catégories triées par nom
-        $user= $membreManager->findAll(["nickName", "ASC"]);
+        $userManager = new UserManager();
 
-        // Le controller communique avec la vue "listCategories" (view) pour lui envoyer la liste des catégories (data)
+        $users = $userManager->findAll(["nickName", "ASC"]);
+
         return [
             "view"             => VIEW_DIR."forum/listUsers.php",
             "meta_description" => "Liste des catégories du forum",
             "data"             => [
-                "user"   => $user
+                "user"   => $users
             ]
         ];
     }

@@ -13,4 +13,17 @@ class UserManager extends Manager{
     public function __construct(){
         parent::connect();
     }
+
+    public function Membres($id) {
+
+        $sql = "SELECT nickName
+                FROM ".$this->tableName." u 
+                ORDER BY u.nickName ASC";
+
+        // la requête renvoie plusieurs enregistrements --> getMultipleResults
+        return  $this->getMultipleResults(
+            DAO::select($sql, ['id' => $id]), 
+            $this->className
+        );
+    }
 }
