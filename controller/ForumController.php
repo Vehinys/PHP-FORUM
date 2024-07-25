@@ -60,4 +60,22 @@ class ForumController extends AbstractController implements ControllerInterface{
             ]
         ];
     }
+
+    public function addTopic($id) {
+        $topicManager = new TopicManager($id);
+        $postManager = new postManager($id);
+        //    var_dump($_POST);
+        //    die();
+    
+        $title        = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $text         = filter_input(INPUT_POST, 'text', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+     
+        $category_id  = $_GET['id'];
+    
+        $topicId =  $topicManager->add(['title' => $title, 'category_id' => $category_id]); 
+        $postManager->add(['text' => $text, 'topic_id' =>$topicId ]);
+    
+        $this->redirectTo("forum", "index");
+    
+        }
 }

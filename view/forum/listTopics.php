@@ -23,7 +23,7 @@
 
 <div class="container_topics_form"><br>
     <!-- Formulaire pour ajouter un posts -->
-    <form class="contenu_topics_form" action="index.php?ctrl=admin&action=addTopic&id=<?= $_GET['id'] ?>" method="POST">
+    <form class="contenu_topics_form" action="index.php?ctrl=forum&action=addTopic&id=<?= $_GET['id'] ?>" method="POST">
 
         <label for="title">Titre du topic :</label><br>
         <input type="text" id="title" name="title" /><br><br>
