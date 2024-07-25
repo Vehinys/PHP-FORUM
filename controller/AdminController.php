@@ -31,13 +31,9 @@ public function addTopic($id) {
     //    die();
     $title        = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $category_id  = $_GET['id'];
-
-    var_dump($category_id);
-
     $topicManager->add(['title' => $title, 'category_id' => $category_id]); 
 
-
-    // $this->redirectTo("forum", "index");
+    $this->redirectTo("forum", "index");
 
     }
 }
