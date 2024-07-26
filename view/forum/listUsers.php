@@ -1,13 +1,13 @@
 <?php
-$users     = $result["data"]['user'];  
-
+$users = $result["data"]['user'];  
 ?>
 
-<h1> Liste des membres :</h1>
+<h1>Liste des membres :</h1>
 
-<div class="container_users" > 
-    <?php foreach($users as $user){  ?> 
-            <h2 class="nickName_user"><?= $user->getNickName() ?></h2> 
-        </a>
+<div class="container_users"> 
+    <?php foreach($users as $user) { ?> 
+        <div class="nickName_user">
+            <h2><?= $user->getNickName() ?></h2>
+        </div>
     <?php } ?>
-</div> 
+</div>
