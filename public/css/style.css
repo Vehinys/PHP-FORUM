@@ -278,6 +278,7 @@ textarea {
     resize: none;
     border: 1px solid black;
     box-shadow: 0 0 10px #719ECE;
+    margin-top: 1rem;
 }
 
 /* -------------------------------- FOOTER -------------------------------- */
