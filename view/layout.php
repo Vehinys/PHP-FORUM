@@ -12,40 +12,40 @@
     </head>
     <body>
         <div id="wrapper"> 
-            <div id="mainpage">
+                <header>
+                        <nav>
+                            <div id="nav">
+                                <ul class='navigation'>
+                                    <li><a class="nav-link marginLeft" href="index.php?ctrl=home&action=index"></i>Accueil</a></li>
+                                
+                                    <?php // si l'admin est connecté
+                                    if(App\Session::isAdmin()){
+                                        ?>
+                                        <li><a href="index.php?ctrl=admin&action=users">Voir la liste des utilisateurs</a></li>
+                                        <?php } 
+
+                                    // si l'utilisateur est connecté 
+                                    if(App\Session::getUser()){
+                                        ?> 
+                                        <li></span>&nbsp;<?= App\Session::getUser()?></li>
+                                        <li><a href="index.php?ctrl=forum&action=index"> Catégories</a></li>
+                                        <li><a class="nav-link" href="index.php?ctrl=security&action=logout">Déconnexion</a></li>
+                                            
+                                            <?php
+                                    }
+                                    else{
+                                        ?>
+                                        <li><a class="nav-link" href="index.php?ctrl=security&action=login">Connexion</a></li>
+                                        <li><a class="nav-link" href="index.php?ctrl=security&action=register">Inscription</a></li>
+                                    </ul>
+                                    <?php    } ?>
+                            </div>
+                        </nav>
+                </header>
+                <div id="mainpage">
                 <!-- c'est ici que les messages (erreur ou succès) s'affichent-->
                 <h3 class="message" style="color: red"><?= App\Session::getFlash("error") ?></h3>
                 <h3 class="message" style="color: green"><?= App\Session::getFlash("success") ?></h3>
-                <header>
-                    <nav>
-                        <div id="nav-left">
-                            <a href="index.php?ctrl=home&action=index">Accueil</a>
-                            <?php
-                            if(App\Session::isAdmin()){
-                                ?>
-                                <a href="index.php?ctrl=home&action=users"> Membres </a>
-                            <?php } ?>
-                        </div>
-                        <div id="nav-right">
-                        <?php
-                            // si l'utilisateur est connecté 
-                            if(App\Session::getUser()){
-                                ?>
-                                <a href="index.php?ctrl=security&action=profile"> <span class="fas fa-user"> </span>&nbsp;<?= App\Session::getUser()?> </a>
-                                <a href="index.php?ctrl=security&action=logout"> Déconnexion </a>
-                                <?php
-                            }
-                            else{
-                                ?>
-                                <a href="index.php?ctrl=forum&action=index"> Catégories</a>
-                                <a href="index.php?ctrl=forum&action=users"> Membres </a>
-                                <a href="index.php?ctrl=security&action=logout"> Déconnexion </a>
-                            <?php
-                            }
-                        ?>
-                        </div>
-                    </nav>
-                </header>
                 <main id="forum">
                     <?= $page ?>
                 </main>
