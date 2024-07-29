@@ -9,11 +9,11 @@ $topics = $result["data"]['topics'];
 
 <p class="home_text" >
 
-    <a href="index.php?ctrl=security&action=login">Se connecter</a>
+    <a href="index.php?ctrl=security&action=loginView">Se connecter</a>
 
     <span>&nbsp;-&nbsp;</span>
 
-    <a href="index.php?ctrl=security&action=register">S'inscrire</a>
+    <a href="index.php?ctrl=security&action=registerView">S'inscrire</a>
     
 </p>
 

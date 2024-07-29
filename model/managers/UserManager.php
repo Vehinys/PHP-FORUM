@@ -16,9 +16,9 @@ class UserManager extends Manager{
 
     public function Membres($id) {
 
-        $sql = "SELECT nickName
+        $sql = "SELECT pseudo
                 FROM ".$this->tableName." u 
-                ORDER BY u.nickName ASC";
+                ORDER BY u.pseudo ASC";
 
         // la requête renvoie plusieurs enregistrements --> getMultipleResults
         return  $this->getMultipleResults(
@@ -26,4 +26,21 @@ class UserManager extends Manager{
             $this->className
         );
     }
+
+    public function findOneByPseudo($pseudo){
+
+        $sql = "SELECT *
+                FROM ".$this->tableName." 
+                WHERE pseudo = :pseudo
+                ";
+    
+        return $this->getOneOrNullResult(
+            DAO::select($sql, ['pseudo' => $pseudo], false), 
+            $this->className
+        );
+    }
+
+
+
+
 }

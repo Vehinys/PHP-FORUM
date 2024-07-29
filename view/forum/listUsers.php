@@ -7,7 +7,7 @@ $users = $result["data"]['user'];
 <div class="container_users"> 
     <?php foreach($users as $user) { ?> 
         <div class="nickName_user">
-            <h2><?= $user->getNickName() ?></h2>
+            <h2><?= $user->getPseudo() ?></h2>
         </div>
     <?php } ?>
 </div>

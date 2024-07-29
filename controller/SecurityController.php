@@ -3,17 +3,26 @@ namespace Controller;
 
 use App\AbstractController;
 use App\ControllerInterface;
-use app\DAO;
+use Model\Managers\UserManager;
+use app\session;
 
 class SecurityController extends AbstractController{
 
     // contiendra les méthodes liées à l'authentification : register, login et logout
 
-    function register($pdo) {
+    public function registerView() {
+        return [
+            "view" => VIEW_DIR."forum/register.php",
+            "meta_description" => "Formulaire d'inscription sur le forum",
+            "data" => []
+        ];
+    }
 
-        // Vérifiez si le formulaire est soumis
+    public function register () {
 
         if (isset($_POST["submit"])) {
+            
+            $userManager = new UserManager();
 
             // Filtrer la saisie des champs du formulaire d'inscription
 
@@ -21,54 +30,61 @@ class SecurityController extends AbstractController{
             $email  = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
             $pass1  = filter_input(INPUT_POST, "pass1", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $pass2  = filter_input(INPUT_POST, "pass2", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $date   = date('Y-m-d H:i:s');
 
 
-            if ($pseudo && $email && $pass1 && $pass2) {
-                $requete = $pdo->prepare("SELECT * FROM user WHERE email = :email");
-                $requete->execute(["email" => $email]);
-                $user = $requete->fetch();
-    
-                // Si l'utilisateur existe
+            if ($pseudo && $email && $pass1 && $pass2 && $date) {
 
-                if ($user) {
+                $user = $userManager->findOneBypseudo($pseudo);
 
-                    header("Location: register.php");exit;
+            // Si l'utilisateur existe
 
-                } else {
+            if($user) {
 
-                    // Insertion de l'utilisateur en BDD
+                Session::addFlash("error", "Ce nom d'utilisateur existe déjà !");
 
-                    if ($pass1 == $pass2 && strlen($pass1) >= 5) { // Vérification que les 2 mots de passes sont identiques et qu'il a un minimum de caractères
-                        $insertUser = $pdo->prepare("INSERT INTO user (pseudo, email, password) VALUES (:pseudo, :email, :password)");
-                        $insertUser->execute([ // Insertion de l'utilisateur dans la BDD avec une requête préparée (pour éviter les injections SQL)
 
-                            "pseudo"   => $pseudo,
-                            "email"    => $email,
-                            "password" => password_hash($pass1, PASSWORD_DEFAULT) // On stocke le mot de passe hashé en base de données
-                        ]);
+            } else {
 
-                        header("Location: login.php");
-                        exit; // Prendre l'habitude de faire un exit après une redirection avec la méthode header();
+                //insertion de l'utilisateur en BDD
+                if($pass1 === $pass2 && strlen($pass1) >= 5) {  
+                    $newUser = [
+
+                        'pseudo' => $pseudo,                
+                        'password' => password_hash($pass1, PASSWORD_DEFAULT),        
+                        'dateInscription' => $date,   
+                    ];
+                    
+                    $userManager->add($newUser);
+
+                    Session::addFlash("success", "Inscription réussie !");
+                    $this->redirectTo("security", "loginForm");
 
                     } else {
-
-                        // Message "Les mots de passe ne sont pas identiques ou mot de passe trop court !"
-                        echo "Les mots de passe ne sont pas identiques ou le mot de passe est trop court !";
+                        Session::addFlash("error", "Le mot de passe est invalide.");
                     }
                 }
 
             } else {
 
-                // Problème de saisie dans les champs de formulaire
-                echo "Veuillez remplir tous les champs du formulaire correctement !";
-
+                Session::addFlash("error", "Le pseudo ou mot de passe est invalide !");
             }
-
-        } else {
-
-            // Par défaut, j'affiche le formulaire d'inscription
-            header("Location: register.php");exit;
         }
+        return [
+
+            "view" => VIEW_DIR."forum/register.php",
+            "meta_description" => "Page d'inscription au forum"
+        ];
+    }
+
+    public function loginView() {
+
+        return [
+
+            "view" => VIEW_DIR."forum/login.php",
+            "meta_description" => "Formulaire de login sur le forum",
+            "data" => []
+        ];
     }
     
     public function login () {
@@ -77,6 +93,12 @@ class SecurityController extends AbstractController{
 
     public function logout () {
 
+        unset($_SESSION["user"]); 
+
+        Session::addFlash("success", "Session déconnectée !"); 
+
+        $this->redirectTo("home");
     }
 
 }
+
