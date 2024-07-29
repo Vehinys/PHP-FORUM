@@ -43,7 +43,6 @@ class SecurityController extends AbstractController{
 
                 Session::addFlash("error", "Ce nom d'utilisateur existe déjà !");
 
-
             } else {
 
                 //insertion de l'utilisateur en BDD
