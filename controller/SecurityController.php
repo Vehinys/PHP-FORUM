@@ -91,6 +91,7 @@ class SecurityController extends AbstractController{
             }
         }
     }
+    
     return [
         "view" => VIEW_DIR."forum/index.php",
         "meta_description" => "Page de l'index du forum"
