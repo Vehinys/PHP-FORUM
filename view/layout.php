@@ -22,7 +22,7 @@
                                     <?php // si l'admin est connecté
                                     if(App\Session::isAdmin()) {
                                         ?>
-                                        <li><a href="index.php?ctrl=admin&action=users">Voir la liste des utilisateurs</a></li>
+                                        <li><a href="index.php?ctrl=admin&action=users">Membres</a></li>
                                         <?php } 
 
                                     // si l'utilisateur est connecté 
