@@ -54,7 +54,9 @@ nav {
     color: #ffeb3b;
 }
 
-
+marquee {
+    width: 30%;
+}
 
 /* -------------------------------- MAIN PAGE -------------------------------- */
 #mainpage, footer {
@@ -129,7 +131,7 @@ p.home_text {
 }
 
 .home_text a:hover {
-    color: #0056b3;
+    color: #ffeb3b;
 }
 
 /* -------------------------------- CATEGORY -------------------------------- */
