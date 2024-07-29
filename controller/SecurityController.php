@@ -9,7 +9,7 @@ class SecurityController extends AbstractController{
 
     // contiendra les méthodes liées à l'authentification : register, login et logout
 
-    function register() {
+    function register($pdo) {
 
         // Vérifiez si le formulaire est soumis
 
