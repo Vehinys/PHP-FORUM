@@ -2,7 +2,7 @@
 
     <h1>S'inscrire</h1>
 
-    <form action="" method="POST">
+    <form action="http://localhost/FORUM/index.php?ctrl=security&action=register" method="POST">
 
         <label for="pseudo">Pseudo</label>
         <input type="text" name="pseudo" id="pseudo"><br>
