@@ -12,44 +12,26 @@
     </head>
     <body>
         <div id="wrapper"> 
-            
-                <header>
-                        <nav>
-                            <div id="nav">
-                                <ul class='navigation'>
-                                    <li><a class="nav-link marginLeft" href="index.php?ctrl=home&action=index"></i>Accueil</a></li>
-                                
-                                    <?php // si l'admin est connecté
-                                    if(App\Session::isAdmin()) {
-                                        ?>
-                                        <li><a href="index.php?ctrl=admin&action=users">Membres</a></li>
-                                        <?php } 
+            <header>
+                <nav>
+                    <div id="nav">
+                        <ul class="navigation">
+                            <li><a class="nav-link" href="index.php?ctrl=home&action=index">Accueil</a></li>
+                            <?php if(App\Session::isAdmin()) { ?>
+                                <li><a class="nav-link" href="index.php?ctrl=admin&action=users">Membres</a></li>
+                            <?php } ?>
 
-                                    // si l'utilisateur est connecté 
-                                    if(App\Session::getUser()) {
-
-                                        ?>
-
-                                        <li></span>&nbsp;<?= App\Session::getUser()?></li>
-                                        <li><a href="index.php?ctrl=forum&action=index"> Catégories</a></li>
-                                        <li><a class="nav-link" href="index.php?ctrl=security&action=logout">Déconnexion</a></li>
-
-                                        <?php
-                                    }
-
-                                    else {
-
-                                        ?>
-
-                                        <li><a class="nav-link" href="index.php?ctrl=security&action=loginView">Connexion</a></li>
-                                        <li><a class="nav-link" href="index.php?ctrl=security&action=registerView">Inscription</a></li>
-
-                                    </ul>
-
-                                    <?php } ?>
-                            </div>
-                        </nav>
-                </header>
+                            <?php if(App\Session::getUser()) { ?>
+                                <li><a class="nav-link" href="index.php?ctrl=forum&action=index">Catégories</a></li>
+                                <li><a class="nav-link" href="index.php?ctrl=security&action=logout">Déconnexion</a></li>
+                            <?php } else { ?>
+                                <li><a class="nav-link" href="index.php?ctrl=security&action=loginView">Connexion</a></li>
+                                <li><a class="nav-link" href="index.php?ctrl=security&action=registerView">Inscription</a></li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
 
                 <div id="mainpage">
                 <!-- c'est ici que les messages (erreur ou succès) s'affichent-->

@@ -7,16 +7,6 @@ $topics = $result["data"]['topics'];
 <p class="home_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ut nemo quia voluptas numquam, 
                     itaque ipsa soluta ratione eum temporibus aliquid, facere rerum in laborum debitis labore aliquam ullam cumque.</p>
 
-<p class="home_text" >
-
-    <a href="index.php?ctrl=security&action=loginView">Se connecter</a>
-
-    <span>&nbsp;-&nbsp;</span>
-
-    <a href="index.php?ctrl=security&action=registerView">S'inscrire</a>
-    
-</p>
-
 <div class="container_home" >
 
 <?php  // Affichage des 5 derniers topics enregistrés sur le forum 
