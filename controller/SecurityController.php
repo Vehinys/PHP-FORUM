@@ -69,7 +69,7 @@ class SecurityController extends AbstractController{
 
             // var_dump($_POST);die;
 
-            $email  = filter_input(INPUT_POST, "email", FILTER_SANITIZE_FULL_SPECIAL_CHARS,FILTER_VALIDATE_EMAIL);
+            $pseudo = filter_input(INPUT_POST, "pseudo", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
             // var_dump($email);die;
@@ -77,24 +77,15 @@ class SecurityController extends AbstractController{
 
         //on vérife que les filtres sont valides
 
-        if($email && $password) {
-
-            // var_dump("OK");die;
-
-            $user = $userManager->findOneByEmail($email);
+        if($pseudo && $password) {
+            $user = $userManager->findOneByPseudo($pseudo);
 
             if($user) { 
-                
                 $hash = $user["password"];
-
                 if(password_verify($password, $hash)) {
-
                     $_SESSION["user"] = $user;
-
                     header("Location: home.php"); exit; 
-
                 } else {
-
                     header("Location: login.php"); exit;
                 }
             }
