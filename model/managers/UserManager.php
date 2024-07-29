@@ -40,7 +40,16 @@ class UserManager extends Manager{
         );
     }
 
+    public function findOneByEmail($email){
 
-
-
+        $sql = "SELECT *
+                FROM ".$this->tableName." 
+                WHERE email = :email
+                ";
+    
+        return $this->getOneOrNullResult(
+            DAO::select($sql, ['email' => $email], false), 
+            $this->className
+        );
+    }
 }

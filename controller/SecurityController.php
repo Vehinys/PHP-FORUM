@@ -20,15 +20,19 @@ class SecurityController extends AbstractController{
             $pass2  = filter_input(INPUT_POST, "pass2", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $date   = date('Y-m-d H:i:s');
             if ($pseudo && $email && $pass1 && $pass2) {
-                $user = $userManager->findOneBypseudo($pseudo);
+
+                $user = $userManager->findOneByPseudo($pseudo);
+
             // Si l'utilisateur existe
+
             if($user) {
                 Session::addFlash("error", "Ce nom d'utilisateur existe déjà !");
             } else {
                 //insertion de l'utilisateur en BDD
                 if($pass1 === $pass2 && strlen($pass1) >= 5) {  
                     $newUser = [
-                        'pseudo' => $pseudo,                
+                        'pseudo' => $pseudo,
+                        'email' => $email,                
                         'password' => password_hash($pass1, PASSWORD_DEFAULT),        
                         'dateInscription' => $date,   
                     ];
@@ -57,15 +61,50 @@ class SecurityController extends AbstractController{
         ];
     }
 
+
+
     public function login () {
+
         if (isset($_POST["submit"])) {
+
+            // var_dump($_POST);die;
 
             $email  = filter_input(INPUT_POST, "email", FILTER_SANITIZE_FULL_SPECIAL_CHARS,FILTER_VALIDATE_EMAIL);
             $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
+            // var_dump($email);die;
+            // var_dump($password);die;
 
+        //on vérife que les filtres sont valides
+
+        if($email && $password) {
+
+            // var_dump("OK");die;
+
+            $user = $userManager->findOneByEmail($email);
+
+            if($user) { 
+                
+                $hash = $user["password"];
+
+                if(password_verify($password, $hash)) {
+
+                    $_SESSION["user"] = $user;
+
+                    header("Location: home.php"); exit; 
+
+                } else {
+
+                    header("Location: login.php"); exit;
+                }
+            }
         }
     }
+    return [
+        "view" => VIEW_DIR."forum/index.php",
+        "meta_description" => "Page de l'index du forum"
+    ];
+}
 
     public function loginView() {
 
