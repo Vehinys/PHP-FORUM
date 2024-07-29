@@ -20,7 +20,7 @@ $category   = $result["data"]['category'];
         <label for="title">Titre du topic :</label><br>
         <input type="text" id="title" name="title" /><br><br>
         <label for="text">Ajoute ton texte :</label><br>
-        <textarea id="text" name="text" rows="8" cols="100"></textarea><br><br>
+        <textarea id="text" name="text" rows="8" cols="80"></textarea><br><br>
         <input type='submit' name='submit'>
     </form>
 </div>
