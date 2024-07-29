@@ -32,7 +32,7 @@ class ForumController extends AbstractController implements ControllerInterface{
         
         $userManager = new UserManager();
 
-        $users = $userManager->findAll(["nickName", "ASC"]);
+        $users = $userManager->findAll(["pseudo", "ASC"]);
 
         return [
             "view"             => VIEW_DIR."forum/listUsers.php",
@@ -47,6 +47,8 @@ class ForumController extends AbstractController implements ControllerInterface{
 
         $topicManager    = new TopicManager();
         $categoryManager = new CategoryManager();
+        $userManager     = new UserManager();
+
         $category        = $categoryManager->findOneById($id);
         $topics          = $topicManager->findTopicsByCategory($id);
 
@@ -55,7 +57,7 @@ class ForumController extends AbstractController implements ControllerInterface{
             "meta_description" => "Liste des topics par catégorie : ".$category->getName(),
             "data"             => [
                 "category"     => $category,
-                "topics"       => $topics
+                "topics"       => $topics,
             ]
         ];
     }

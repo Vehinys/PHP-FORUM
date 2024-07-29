@@ -1,8 +1,9 @@
 <?php
 $topics = $result["data"]['topics'];
+
 ?>
 
-<h1 > <marquee> BIENVENUE SUR LE FORUM </marquee> </h1>
+<h1 > <marquee> BIENVENUE SUR LE FORUM <?= App\Session::getUser()?> </marquee> </h1>
 
 <p class="home_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ut nemo quia voluptas numquam, 
                     itaque ipsa soluta ratione eum temporibus aliquid, facere rerum in laborum debitis labore aliquam ullam cumque.</p>

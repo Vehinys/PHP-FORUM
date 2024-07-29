@@ -33,8 +33,10 @@ class SecurityController extends AbstractController{
                         'pseudo' => $pseudo,
                         'email' => $email,                
                         'password' => password_hash($pass1, PASSWORD_DEFAULT),        
-                        'dateInscription' => $date,   
-                    ];
+                        'dateInscription' => $date,
+                        'role' =>  json_encode(["ROLE_USER"
+                    ])];
+                    
                     $userManager->add($newUser);
                     Session::addFlash("success", "Inscription réussie !");
                     $this->redirectTo("security", "loginView");
