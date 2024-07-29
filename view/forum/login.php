@@ -1,4 +1,4 @@
-<div class="centered">
+<div >
     <h1>Se connecter</h1>
     <form action="index.php?ctrl=security&action=login" method="POST">
         <label for="userName">Pseudo</label>

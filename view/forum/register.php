@@ -1,4 +1,4 @@
-<div class="centered">
+<div>
     <h1>S'inscrire</h1>
     <form action="index.php?ctrl=security&action=register" method="POST">
         <label for="userName">Pseudo</label>
