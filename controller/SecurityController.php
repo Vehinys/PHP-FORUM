@@ -10,14 +10,6 @@ class SecurityController extends AbstractController{
 
     // contiendra les méthodes liées à l'authentification : register, login et logout
 
-    public function registerView() {
-        return [
-            "view" => VIEW_DIR."forum/register.php",
-            "meta_description" => "Formulaire d'inscription sur le forum",
-            "data" => []
-        ];
-    }
-
     public function register () {
         if (isset($_POST["submit"])) {
 
@@ -78,6 +70,18 @@ class SecurityController extends AbstractController{
     //     ];
     // }
 
+    public function registerView() {
+        return [
+            "view" => VIEW_DIR."forum/register.php",
+            "meta_description" => "Formulaire d'inscription sur le forum",
+            "data" => []
+        ];
+    }
+
+    public function login () {
+
+    }
+
     public function loginView() {
 
         return [
@@ -86,10 +90,6 @@ class SecurityController extends AbstractController{
             "meta_description" => "Formulaire de login sur le forum",
             "data" => []
         ];
-    }
-    
-    public function login () {
-
     }
 
     public function logout () {
