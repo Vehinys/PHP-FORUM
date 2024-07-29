@@ -1,6 +1,9 @@
 <div>
+    
     <h1>S'inscrire</h1>
+
     <form action="index.php?ctrl=security&action=register" method="POST">
+
         <label for="userName">Pseudo</label>
         <input type="text" name="userName" id="userName"><br>
 
@@ -11,5 +14,7 @@
         <input type="password" name="pass2" id ="pass2"><br>
         
         <input type="submit" name="submit" value="S'enregistrer">
+
     </form>
+
 </div>
