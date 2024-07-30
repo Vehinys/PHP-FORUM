@@ -111,10 +111,6 @@ final class Topic extends Entity{
         return $this;
     }
 
-    public function __toString(){
-        return $this->title;
-    }
-
     /**
      * Get the value of category
      */ 
@@ -134,4 +130,10 @@ final class Topic extends Entity{
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return $this->title;
+    }
+
 }

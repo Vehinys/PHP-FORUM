@@ -88,10 +88,23 @@ class ForumController extends AbstractController implements ControllerInterface{
         $text         = filter_input(INPUT_POST, 'text', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
      
         $category_id  = $_GET['id'];
+
+        $user = Session::getUser()->getId();
     
-        $topicId =  $topicManager->add(['title' => $title, 'category_id' => $category_id]); 
-        $postManager->add(['text' => $text, 'topic_id' =>$topicId ]);
-    
+        $topicId =  $topicManager->add (
+            
+            ['title'       => $title, 
+             'category_id' => $category_id,
+             'user'        => $user]
+            ); 
+
+        $postManager->add (
+            
+            ['text'     => $text,
+             'topic_id' => $topicId,
+             'user'     => $user]
+            );
+
         $this->redirectTo("forum", "index");
     
         }
