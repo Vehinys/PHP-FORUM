@@ -90,11 +90,11 @@ class ForumController extends AbstractController implements ControllerInterface{
         $user = Session::getUser()->getId();
         $topicId =  $topicManager->add (
             
-            ['title'       => $title, 'category_id' => $category_id, 'user' => $user] ); 
+            ['title'       => $title, 'category_id' => $category_id, 'user_id' => $user] ); 
 
         $postManager->add (
             
-            ['text'     => $text, 'topic_id' => $topicId, 'user' => $user] );
+            ['text'     => $text, 'topic_id' => $topicId, 'user_id' => $user] );
 
         $this->redirectTo("forum", "index");
     
