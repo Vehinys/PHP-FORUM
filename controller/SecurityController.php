@@ -61,6 +61,12 @@ class SecurityController extends AbstractController{
         ];
     }
 
+    private function isPasswordValid($password) {
+        // Regex pour valider un mot de passe avec au minimum 12 caractères comprenant une majuscule, des minuscules, un chiffre et des caractères spéciaux
+        $pattern = '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\W_]).{12,}$/';
+        return preg_match($pattern, $password);
+    }
+
     public function registerView() {
 
         return [
