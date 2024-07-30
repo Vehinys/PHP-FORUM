@@ -101,16 +101,15 @@ class ForumController extends AbstractController implements ControllerInterface{
         }
 
     public function addPost($id) {
+
         $postManager = new postManager($id);
 
         $topic_id  = $_GET['id'];
-        //    var_dump($_POST);
-        //    die();
+        $user = Session::getUser()->getId();
         
         $text = filter_input(INPUT_POST, 'text', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        var_dump($text);
         
-        $postManager->add(['text' => $text, 'topic_id' => $topic_id]);
+        $postManager->add(['text' => $text, 'topic_id' => $topic_id,'user_id' => $user]);
     
         $this->redirectTo("forum", "index");
     

@@ -29,9 +29,12 @@ class Session{
     /**
     *   met un user dans la session (pour le maintenir connecté)
     */
+    
     public static function setUser($user){
         $_SESSION["user"] = $user;
     }
+
+    // La méthode statique getUser() vérifie si un utilisateur est stocké dans la session et le renvoie, ou retourne false s'il n'existe pas.
 
     public static function getUser(){
         return (isset($_SESSION['user'])) ? $_SESSION['user'] : false;

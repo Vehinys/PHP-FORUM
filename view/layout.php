@@ -16,7 +16,9 @@
                 <nav>
                     <div id="nav">
                         <ul class="navigation">
+                            
                             <li><a class="nav-link" href="index.php?ctrl=home&action=index">Accueil</a></li>
+                            <li><a class="nav-link" href="index.php?ctrl=forum&action=index">Catégories</a></li>
 
                             <?php if(App\Session::isAdmin()) { ?>
 
@@ -25,7 +27,6 @@
 
                             <?php if(App\Session::getUser()) { ?>
 
-                                <li><a class="nav-link" href="index.php?ctrl=forum&action=index">Catégories</a></li>
                                 <li><a class="nav-link" href="index.php?ctrl=security&action=logout">Déconnexion</a></li>
 
                             <?php } else { ?>

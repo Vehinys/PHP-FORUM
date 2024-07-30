@@ -1,9 +1,6 @@
 <?php
-$topics     = $result["data"]['topics'];  
-$category   = $result["data"]['category'];  
+$topics     = $result["data"]['topics'];   
 ?>
-
-<h1> Liste des topics : <?= $category->getName() ?> </h1>
 
 <div class="container_topics" > 
     <?php foreach($topics as $topic){  ?> 
@@ -14,9 +11,11 @@ $category   = $result["data"]['category'];
     <?php } ?>
 </div> 
 
+<?php if(App\Session::getUser()) { ?>
+
 <div class="container_topics_form"><br>
     <!-- Formulaire pour ajouter un posts -->
-    <form class="contenu_topics_form" action="index.php?ctrl=forum&action=addTopic&id=<?= $_GET['id'] ?>" method="POST">
+    <form class="contenu_topics_form" action="index.php?ctrl=forum&action=addTopic&id=<?=$_GET['id']?>" method="POST">
         <label for="title">Titre du topic :</label><br>
         <input type="text" id="title" name="title" /><br><br>
         <label for="text">Ajoute ton texte :</label><br>
@@ -24,3 +23,5 @@ $category   = $result["data"]['category'];
         <input type='submit' name='submit'>
     </form>
 </div>
+
+<?php } ?>
