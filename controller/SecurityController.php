@@ -84,7 +84,7 @@ class SecurityController extends AbstractController{
                 if(password_verify($password, $hash)) {
                     $_SESSION["user"] = $user;
                     Session::addFlash("success", "Inscription réussie !");
-                    $this->redirectTo("forum", "index");
+                    $this->redirectTo("home", "index");
                 } else {
                     Session::addFlash("error", "Le pseudo ou le mot de passe est invalide.");
                     header("Location: login.php"); exit;
