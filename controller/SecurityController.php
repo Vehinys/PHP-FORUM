@@ -20,15 +20,18 @@ class SecurityController extends AbstractController{
             $pass1  = filter_input(INPUT_POST, "pass1", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $pass2  = filter_input(INPUT_POST, "pass2", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $date   = date('Y-m-d H:i:s');
+
             if ($pseudo && $email && $pass1 && $pass2) {
                 $user = $userManager->findOneByPseudo($pseudo);
 
             // Si l'utilisateur existe
             if($user) {
                 Session::addFlash("error", "Ce nom d'utilisateur existe déjà !");
+
             } else {
+
                 //insertion de l'utilisateur en BDD
-                if($pass1 === $pass2 && strlen($pass1) >= 5) {  
+                if($pass1 === $pass2 && strlen($pass1) >= 12) {  
                     $newUser = [
                         'pseudo' => $pseudo,
                         'email' => $email,                
