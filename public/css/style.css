@@ -56,6 +56,7 @@ nav {
 
 marquee {
     width: 30%;
+    font-size: 4rem;
 }
 
 /* -------------------------------- MAIN PAGE -------------------------------- */
@@ -111,8 +112,12 @@ h1 {
 }
 
 .title_home {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 0.5rem;
+}
+
+.title_home:hover, .p_topic b:hover {
+    color: #ffeb3b;
 }
 
 .home_text {
@@ -121,7 +126,7 @@ h1 {
 
 p.home_text {
     font-size: 2rem;
-    margin: 1rem 3rem;
+    margin: 1rem 3rem 2rem 0;
     color: #000000;
 }
 
@@ -140,7 +145,8 @@ p.home_text {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
-    padding: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
 }
 
 .category_card, .container_category p {
@@ -226,7 +232,7 @@ p.home_text {
 
 .title_topic {
     font-weight: bold;
-    font-size: 1.25rem;
+    font-size: 2rem;
     color: white;
     margin-bottom: 0.5rem;
 }
@@ -258,7 +264,7 @@ p.home_text {
     border-radius: 10px;
     box-shadow: 4px 4px 14px -2px rgba(0, 0, 0, 0.59);
     padding: 0.75rem;
-    font-size: 1.25rem;
+    font-size: 2rem;
 }
 
 .contenu_posts {
@@ -276,6 +282,10 @@ p.home_text {
 
 .user_posts {
     font-size: 1rem;
+}
+
+.user_posts:hover {
+    color: #ffeb3b;
 }
 
 .container_contenu_posts {
