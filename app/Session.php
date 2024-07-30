@@ -51,7 +51,9 @@ class Session{
 
         // attention de bien définir la méthode "hasRole" dans l'entité User en fonction de la façon dont sont gérés les rôles en base de données
 
-        if(self::getUser() && self::getUser()->hasRole("ROLE_ADMIN")){
+        // Si le getUser est connecté et que le getUser a le ROLE_ADMIN alors donne lui les droits ADMIN SINON : rien 
+
+        if(self::getUser() && self::getUser()->hasRole("ROLE_ADMIN")) {
             return true;
         }
         return false;
