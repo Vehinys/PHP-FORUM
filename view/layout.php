@@ -16,21 +16,27 @@
                 <nav>
                     <div id="nav">
                         <ul class="navigation">
-                            
-                            <li><a class="nav-link" href="index.php?ctrl=home&action=index">Accueil</a></li>
-                            <li><a class="nav-link" href="index.php?ctrl=forum&action=index">Catégories</a></li>
+
+                            <!-- Affichage de la acceuil et catégorie meme si on est connecté ou non -->
+
+                                <li><a class="nav-link" href="index.php?ctrl=home&action=index">Accueil</a></li>
+                                <li><a class="nav-link" href="index.php?ctrl=forum&action=index">Catégories</a></li>
+
+                            <!-- Affichage de la nav Membres si on est admin  -->
 
                             <?php if(App\Session::isAdmin()) { ?>
-
                                 <li><a class="nav-link" href="index.php?ctrl=admin&action=users">Membres</a></li>
+
                             <?php } ?>
 
-                            <?php if(App\Session::getUser()) { ?>
+                            <!-- Affichage de la nav deconnexion si on est connecté -->
 
+                            <?php if(App\Session::getUser()) { ?>
                                 <li><a class="nav-link" href="index.php?ctrl=security&action=logout">Déconnexion</a></li>
 
-                            <?php } else { ?>
+                                <!-- Affichage de la nav connexion et inscription si on est pas connectées -->
 
+                            <?php } else { ?>
                                 <li><a class="nav-link" href="index.php?ctrl=security&action=loginView">Connexion</a></li>
                                 <li><a class="nav-link" href="index.php?ctrl=security&action=registerView">Inscription</a></li>
 
