@@ -72,7 +72,7 @@ marquee {
 h1 {
     margin: 2rem 0;
     font-size: 2rem;
-    color: #333;
+    color: black;
     text-align: center;
 }
 
@@ -90,10 +90,10 @@ h1 {
     background: linear-gradient(to left, rgba(3, 127, 176, 1) 0%, rgba(32, 76, 98, 1) 100%);
     display: flex;
     color: white;
-    padding: 0.75rem;
+    padding: 2rem 0;
     margin-top: 1rem;
     justify-content: center;
-    width: 380px;
+    width: 570px;
     border: 1px solid rgba(54, 194, 182, 0.96);
     border-radius: 10px;
     box-shadow: 4px 4px 14px -2px rgba(0, 0, 0, 0.59);
@@ -111,7 +111,7 @@ h1 {
 }
 
 .title_home {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
 
@@ -144,14 +144,15 @@ p.home_text {
 }
 
 .category_card, .container_category p {
-    width: 200px;
+    width: 780px;
     border: 1px solid rgba(54, 194, 182, 0.96);
     border-radius: 10px;
     box-shadow: 4px 4px 14px -2px rgba(0, 0, 0, 0.59);
-    padding: 1rem;
+    padding: 3rem;
     background: linear-gradient(to left, rgba(3, 127, 176, 1) 0%, rgba(32, 76, 98, 1) 100%);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 1rem;
 }
 
 .category_card:hover, .container_category p:hover {
@@ -162,12 +163,12 @@ p.home_text {
 .contenu_category {
     letter-spacing: 1px;
     color: white;
-    font-size: 1rem;
+    font-size: 2rem;
     text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.6);
 }
 
 .contenu_category:hover {
-    color: rgb(157, 251, 225);
+    color: #ffeb3b;
 }
 
 .add_category_form {
@@ -213,7 +214,7 @@ p.home_text {
 .container_topics a {
     display: grid;
     justify-items: start;
-    width: 350px;
+    width: 400px;
     margin: 10px 0 0 20px;
     color: white;
     border: 1px solid rgba(54, 194, 182, 0.96);
@@ -231,7 +232,7 @@ p.home_text {
 }
 
 .title_topic:hover {
-    color: rgb(157, 251, 225);
+    color: #ffeb3b;
 }
 
 .p_topic {
@@ -243,7 +244,7 @@ p.home_text {
 }
 
 .user_topic:hover {
-    color: rgb(157, 251, 225);
+    color: #ffeb3b;
 }
 
 /* -------------------------------- POSTS -------------------------------- */
