@@ -39,7 +39,12 @@ class Session{
 
     public static function getUser(){
 
+        //  Vérifie si l'utilisateur est connecté ($_SESSION['user]), sinon, indique que l'utilisateur n'est pas connecté ($_SESSION['user'] : false).
+
         return (isset($_SESSION['user'])) ? $_SESSION['user'] : false;
+
+        // Ceci est une fonction ternaire : Si la session de l'utilisateur est active (connecté), alors retourne la valeur de $_SESSION['user']; sinon, retourne false.
+        // [SI] - [ALORS] - [SINON]
     }
 
     public static function isAdmin(){
