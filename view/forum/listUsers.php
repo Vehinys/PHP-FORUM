@@ -2,6 +2,8 @@
 $users = $result["data"]['user'];  
 ?>
 
+<!-- LISTE DES MEMBRES -->
+
 <h1>Liste des membres :</h1>
 
 <div class="container_users"> 

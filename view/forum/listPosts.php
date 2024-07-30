@@ -2,15 +2,14 @@
 // listPosts.php
 $topic      = $result["data"]['topic'];
 $posts      = $result["data"]['posts'];
-
 ?>
 
-<div class="container_posts"> 
+<!-- LISTE DES POSTS -->
 
+<div class="container_posts"> 
     <div class="container_posts_title">
         <p><?= $topic->getTitle(); ?> </p>
     </div>
-
     <?php foreach ($posts as $post): ?>
         <div class="contenu_posts">
             <p><?= $post->getText(); ?></p>
@@ -18,6 +17,8 @@ $posts      = $result["data"]['posts'];
         </div>
     <?php endforeach; ?>
 </div>    
+
+<!-- AJOUT DES POSTS -->
 
 <?php if(App\Session::getUser()) { ?>
 

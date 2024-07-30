@@ -29,19 +29,23 @@ class Session{
     /**
     *   met un user dans la session (pour le maintenir connecté)
     */
-    
+
     public static function setUser($user){
         $_SESSION["user"] = $user;
     }
 
+    // Les méthodes statiques peuvent être appelées sans qu'une instance d'objet n'ait été créée.
     // La méthode statique getUser() vérifie si un utilisateur est stocké dans la session et le renvoie, ou retourne false s'il n'existe pas.
 
     public static function getUser(){
+
         return (isset($_SESSION['user'])) ? $_SESSION['user'] : false;
     }
 
     public static function isAdmin(){
+
         // attention de bien définir la méthode "hasRole" dans l'entité User en fonction de la façon dont sont gérés les rôles en base de données
+
         if(self::getUser() && self::getUser()->hasRole("ROLE_ADMIN")){
             return true;
         }
