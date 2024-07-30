@@ -9,8 +9,10 @@ use Model\Managers\UserManager;
 class SecurityController extends AbstractController{
 
     // contiendra les méthodes liées à l'authentification : register, login et logout
+    // les mots de passe doivent être composés d'au minimum 12 caractères comprenant une majuscule, des minuscules, un chiffres et des caractères spéciaux.
 
     public function register () {
+
         if (isset($_POST["submit"])) {
             $userManager = new UserManager();
 
@@ -48,17 +50,21 @@ class SecurityController extends AbstractController{
                     }
                 }
             } else {
+
                 Session::addFlash("error", "Le pseudo ou mot de passe est invalide !");
             }
         }
         return [
+
             "view" => VIEW_DIR."forum/login.php",
             "meta_description" => "Page de login au forum"
         ];
     }
 
     public function registerView() {
+
         return [
+            
             "view" => VIEW_DIR."forum/register.php",
             "meta_description" => "Formulaire d'inscription sur le forum",
             "data" => []
