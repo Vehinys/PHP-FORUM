@@ -17,17 +17,24 @@
                     <div id="nav">
                         <ul class="navigation">
                             <li><a class="nav-link" href="index.php?ctrl=home&action=index">Accueil</a></li>
+
                             <?php if(App\Session::isAdmin()) { ?>
+
                                 <li><a class="nav-link" href="index.php?ctrl=admin&action=users">Membres</a></li>
                             <?php } ?>
 
                             <?php if(App\Session::getUser()) { ?>
+
                                 <li><a class="nav-link" href="index.php?ctrl=forum&action=index">Catégories</a></li>
                                 <li><a class="nav-link" href="index.php?ctrl=security&action=logout">Déconnexion</a></li>
+
                             <?php } else { ?>
+
                                 <li><a class="nav-link" href="index.php?ctrl=security&action=loginView">Connexion</a></li>
                                 <li><a class="nav-link" href="index.php?ctrl=security&action=registerView">Inscription</a></li>
+
                             <?php } ?>
+
                         </ul>
                     </div>
                 </nav>
@@ -46,9 +53,11 @@
             </footer>
         </div>
         <script
+
             src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
             crossorigin="anonymous">
+            
         </script>
         <script>
             $(document).ready(function(){

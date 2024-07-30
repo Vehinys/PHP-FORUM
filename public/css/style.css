@@ -353,7 +353,7 @@ footer a, footer p {
     padding: 1rem;
 }
 
-.nickName_user {
+.pseudo_user {
     background: linear-gradient(to left, rgba(3, 127, 176, 1) 0%, rgba(32, 76, 98, 1) 100%);
     color: white;
     padding: 1rem;
@@ -364,7 +364,7 @@ footer a, footer p {
     text-align: center;
 }
 
-.nickName_user:hover {
+.pseudo_user:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }

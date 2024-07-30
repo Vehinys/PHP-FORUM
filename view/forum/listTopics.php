@@ -9,7 +9,7 @@ $category   = $result["data"]['category'];
     <?php foreach($topics as $topic){  ?> 
         <a class="contenu_topics" href="index.php?ctrl=forum&action=listPostsByTopic&id=<?= $topic->getId() ?>">
             <h2 class="title_topic"><?= $topic ?></h2> 
-            <div class="p_topic"> Par <b class="user_topic"><?= $topic->getUser() ?></b> Le <?= $topic->getCreationDate();?> </div>
+            <div class="p_topic"> Par <b class="user_topic"><?= $topic->getUser()->getPseudo()?></b> Le <?= $topic->getCreationDate();?> </div>
         </a>
     <?php } ?>
 </div> 

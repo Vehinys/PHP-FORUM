@@ -14,7 +14,7 @@ $posts   = $result["data"]['posts'];
     <?php foreach ($posts as $post): ?>
         <div class="contenu_posts">
             <p><?= $post->getText(); ?></p>
-            <p class="container_contenu_posts"> Posté par <b class="user_posts"><?= $topic->getUser() ?></b>  le <?= $post->getCreationDate() ?></p>   
+            <p class="container_contenu_posts"> Posté par <b class="user_posts"><?= $topic->getUser()->getPseudo()?></b>  le <?= $post->getCreationDate() ?></p>   
         </div>
     <?php endforeach; ?>
 </div>    
