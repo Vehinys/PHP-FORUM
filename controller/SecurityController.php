@@ -56,7 +56,7 @@ class SecurityController extends AbstractController{
         }
         return [
 
-            "view" => VIEW_DIR."forum/login.php",
+            "view" => VIEW_DIR."security/login.php",
             "meta_description" => "Page de login au forum"
         ];
     }
@@ -65,7 +65,7 @@ class SecurityController extends AbstractController{
 
         return [
             
-            "view" => VIEW_DIR."forum/register.php",
+            "view" => VIEW_DIR."security/register.php",
             "meta_description" => "Formulaire d'inscription sur le forum",
             "data" => []
         ];
@@ -108,7 +108,7 @@ class SecurityController extends AbstractController{
 }
     public function loginView() {
         return [
-            "view" => VIEW_DIR."forum/login.php",
+            "view" => VIEW_DIR."security/login.php",
             "meta_description" => "Formulaire de login sur le forum",
             "data" => []
         ];
