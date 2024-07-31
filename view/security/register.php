@@ -10,8 +10,9 @@
         <input type="email" name="email" id="email" required>
         
         <label for="pass1">Mot de passe</label>
-        <input type="password" name="pass1" id="pass1" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$" required>
+        <input type="password" name="pass1" id="pass1" required>
         
+
         <label for="pass2">Confirmation du mot de passe</label>
         <input type="password" name="pass2" id="pass2" required>
         

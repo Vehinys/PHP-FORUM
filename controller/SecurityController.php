@@ -26,37 +26,37 @@ class SecurityController extends AbstractController{
             if ($pseudo && $email && $pass1 && $pass2) {
                 $user = $userManager->findOneByPseudo($pseudo);
 
-            // Si l'utilisateur existe
-            if($user) {
-                Session::addFlash("error", "Ce nom d'utilisateur existe déjà !");
-
-            } else {
-
-                //insertion de l'utilisateur en BDD
-                if($pass1 === $pass2 && strlen($pass1) >= 12) {  
-                    $newUser = [
-                        'pseudo' => $pseudo,
-                        'email' => $email,                
-                        'password' => password_hash($pass1, PASSWORD_DEFAULT),        
-                        'dateInscription' => $date,
-                        'role' =>  json_encode(["ROLE_USER"])
-                    ];
-                    
-                    $userManager->add($newUser);
-                    Session::addFlash("success", "Inscription réussie !");
-                    $this->redirectTo("security", "loginView");
+                // Si l'utilisateur existe
+                if($user) {
+                    Session::addFlash("error", "Ce nom d'utilisateur existe déjà !");
+                } else {
+                    //insertion de l'utilisateur en BDD
+                    if($pass1 === $pass2) {
+                        if ($this->isPasswordValid($pass1)) {
+                            $newUser = [
+                                'pseudo' => $pseudo,
+                                'email' => $email,                
+                                'password' => password_hash($pass1, PASSWORD_DEFAULT),        
+                                'dateInscription' => $date,
+                                'role' =>  json_encode(["ROLE_USER"])
+                            ];
+                            
+                            $userManager->add($newUser);
+                            Session::addFlash("success", "Inscription réussie !");
+                            $this->redirectTo("security", "loginView");
+                        } else {
+                            Session::addFlash("error", "Le mot de passe doit comporter au moins 12 caractères, dont une majuscule, une minuscule, un chiffre et un caractère spécial.");
+                        }
                     } else {
-                        Session::addFlash("error", "Le mot de passe est invalide.");
+                        Session::addFlash("error", "Les mots de passe ne correspondent pas.");
                     }
                 }
             } else {
-
-                Session::addFlash("error", "Le pseudo ou mot de passe est invalide !");
+                Session::addFlash("error", "Le pseudo, l'email ou le mot de passe est invalide !");
             }
         }
         return [
-
-            "view" => VIEW_DIR."security/login.php",
+            "view" => VIEW_DIR."security/register.php",
             "meta_description" => "Page de login au forum"
         ];
     }
@@ -68,16 +68,12 @@ class SecurityController extends AbstractController{
     }
 
     public function registerView() {
-
         return [
-            
             "view" => VIEW_DIR."security/register.php",
             "meta_description" => "Formulaire d'inscription sur le forum",
             "data" => []
         ];
     }
-
-
 
     public function login () {
 
@@ -91,27 +87,28 @@ class SecurityController extends AbstractController{
             // var_dump($email);die;
             // var_dump($password);die;
 
-        //on vérife que les filtres sont valides
-        if($pseudo && $password) {
-            $user = $userManager->findOneByPseudo($pseudo);
-            if($user) { 
-                $hash = $user->getPassword();
-                if(password_verify($password, $hash)) {
-                    $_SESSION["user"] = $user;
-                    $this->redirectTo("home", "index");
-                } else {
-                    Session::addFlash("error", "Le pseudo ou le mot de passe est invalide.");
-                    header("Location: login.php"); exit;
+            //on vérife que les filtres sont valides
+            if($pseudo && $password) {
+                $user = $userManager->findOneByPseudo($pseudo);
+                if($user) { 
+                    $hash = $user->getPassword();
+                    if(password_verify($password, $hash)) {
+                        $_SESSION["user"] = $user;
+                        $this->redirectTo("home", "index");
+                    } else {
+                        Session::addFlash("error", "Le pseudo ou le mot de passe est invalide.");
+                        header("Location: login.php"); exit;
+                    }
                 }
             }
         }
+
+        return [
+            "view" => VIEW_DIR."forum/index.php",
+            "meta_description" => "Page de l'index du forum"
+        ];
     }
 
-    return [
-        "view" => VIEW_DIR."forum/index.php",
-        "meta_description" => "Page de l'index du forum"
-    ];
-}
     public function loginView() {
         return [
             "view" => VIEW_DIR."security/login.php",
@@ -127,4 +124,3 @@ class SecurityController extends AbstractController{
     }
 
 }
-
